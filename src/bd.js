@@ -13,11 +13,22 @@ function salvarProduto(produto) {
 }
 
 function retornarProduto(id) {
-  return produto[id] || {}
+  return produtos[id] || {}
 }
 
 function retornarProdutos() {
   return Object.values(produtos)
 }
 
-module.exports = { salvarProduto, retornarProduto, retornarProdutos }
+function deletarProduto(id) {
+  const produto = produtos[id]
+  delete produtos[id]
+  return produto
+}
+
+module.exports = {
+  salvarProduto,
+  retornarProduto,
+  retornarProdutos,
+  deletarProduto
+}
