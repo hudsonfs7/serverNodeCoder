@@ -15,10 +15,10 @@ app.get('/produtos:id', (req, res) => {
 })
 
 app.post('/produtos', (req, res) => {
-  const produto = {
+  const produto = bd.salvarProduto({
     name: req.body.name,
-    preco: req.body.preco
-  }
+    price: req.body.price
+  })
   res.send(produto)
 })
 
